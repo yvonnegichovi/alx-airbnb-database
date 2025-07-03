@@ -77,7 +77,6 @@ WHERE
 -- This approach is often preferred as it avoids the RIGHT JOIN which can sometimes be less intuitive.
 -- It works by doing a LEFT JOIN from User to Booking, and then another LEFT JOIN from Booking to User,
 -- combining the results, and filtering out duplicates.
-/*
 SELECT
     COALESCE(U.user_id, B.user_id) AS user_id,
     U.first_name,
@@ -109,5 +108,4 @@ LEFT JOIN
     User AS U ON B.user_id = U.user_id
 WHERE
     U.user_id IS NULL; -- This ensures we only get bookings that didn't have a matching user in the first LEFT JOIN
-*/
 
