@@ -1,7 +1,3 @@
-Here's a cleaned-up, professional, and well-formatted version of your `README.md` file:
-
----
-
 # Unleashing Advanced Querying Power
 
 This project is a core component of the **ALX Airbnb Database Module**, aimed at equipping professional developers with advanced SQL querying and optimization techniques.
@@ -106,8 +102,3 @@ Demonstrate mastery of SQL joins by writing advanced queries.
 **Solution File:**
 All queries for this task are located in:
 `database-adv-script/joins_queries.sql`
-
----
-
-Let me know if you'd like this split into multiple sections/files or turned into a webpage using Markdown viewers like GitHub Pages.
-
