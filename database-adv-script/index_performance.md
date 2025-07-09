@@ -6,7 +6,7 @@ Indexes are most effective on columns frequently used in WHERE clauses, JOIN con
 
 * User Table:
 
-** email: Frequently used for user login and unique identification.
+email: Frequently used for user login and unique identification.
 
 * Property Table:
 
@@ -138,9 +138,9 @@ After applying the indexes, you would typically observe the following changes in
 
 * type change: For tables involved in WHERE clauses (e.g., Property for location, Booking for start_date), the type should change from ALL to range or ref, indicating that the index is being used to quickly locate relevant rows.
 
-*Reduced rows: The number of rows scanned by the database engine should significantly decrease, as the index allows it to jump directly to the data it needs.
+* Reduced rows: The number of rows scanned by the database engine should significantly decrease, as the index allows it to jump directly to the data it needs.
 
-*Extra improvements:
+* Extra improvements:
 
 Using filesort should disappear if an index covers the ORDER BY clause (e.g., idx_booking_dates for ORDER BY B.start_date).
 
