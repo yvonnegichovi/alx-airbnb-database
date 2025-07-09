@@ -35,3 +35,21 @@ CREATE INDEX idx_review_user_id ON Review (user_id);
 CREATE INDEX idx_message_sender_id ON Message (sender_id);
 -- Index on 'recipient_id' for efficient retrieval of messages received by a user.
 CREATE INDEX idx_message_recipient_id ON Message (recipient_id);
+EXPLAIN ANALYZE
+SELECT
+    P.name AS property_name,
+    P.location,
+    B.start_date,
+    B.end_date,
+    U.first_name AS guest_first_name,
+    U.last_name AS guest_last_name
+FROM
+    Booking AS B
+INNER JOIN
+    Property AS P ON B.property_id = P.property_id
+INNER JOIN
+    User AS U ON B.user_id = U.user_id
+WHERE
+    P.location = 'New York' AND B.start_date >= '2025-01-01'
+ORDER BY
+    B.start_date;
