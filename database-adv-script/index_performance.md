@@ -6,7 +6,7 @@ Indexes are most effective on columns frequently used in WHERE clauses, JOIN con
 
 * User Table:
 
-email: Frequently used for user login and unique identification.
+** email: Frequently used for user login and unique identification.
 
 * Property Table:
 
