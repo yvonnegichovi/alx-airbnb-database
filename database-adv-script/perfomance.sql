@@ -28,7 +28,9 @@ INNER JOIN
 INNER JOIN
     Property AS P ON B.property_id = P.property_id
 INNER JOIN
-    Payment AS PY ON B.booking_id = PY.booking_id;
+    Payment AS PY ON B.booking_id = PY.booking_id
+WHERE
+    P.location = 'New York' AND b.START_DATE >= '2025-01-01';
 
 -- --- Performance Analysis: EXPLAIN ANALYZE for Initial Query ---
 -- Run this to see the execution plan and runtime statistics *before* any specific refactoring
@@ -59,7 +61,9 @@ INNER JOIN
 INNER JOIN
     Property AS P ON B.property_id = P.property_id
 INNER JOIN
-    Payment AS PY ON B.booking_id = PY.booking_id;
+    Payment AS PY ON B.booking_id = PY.booking_id
+WHERE
+    P.location = 'New York' AND B.start_date >= '2025-01-01';
 
 -- --- Refactored Query ---
 SELECT
@@ -87,7 +91,9 @@ INNER JOIN
 INNER JOIN
     Property AS P ON B.property_id = P.property_id
 INNER JOIN
-    Payment AS PY ON B.booking_id = PY.booking_id;
+    Payment AS PY ON B.booking_id = PY.booking_id
+WHERE
+    P.location = 'New York' AND B.start_date >= '2025-01-01';
 
 -- --- Performance Analysis: EXPLAIN ANALYZE for Refactored Query ---
 EXPLAIN ANALYZE
@@ -116,4 +122,6 @@ INNER JOIN
 INNER JOIN
     Property AS P ON B.property_id = P.property_id
 INNER JOIN
-    Payment AS PY ON B.booking_id = PY.booking_id;
+    Payment AS PY ON B.booking_id = PY.booking_id
+WHERE
+    P.location = 'New York' AND B.start_date >= '2025-01-01';
